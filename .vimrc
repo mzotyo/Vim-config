@@ -5,7 +5,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'https://github.com/MattesGroeger/vim-bookmarks'                       " Bokmarking rows
     Plug 'https://github.com/mileszs/ack.vim'                                   " Search files (perl and ack has to be installed first on the operating system)
     Plug 'https://github.com/ashfinal/vim-colors-paper'                         " Color scheme: paper
-    Plug 'http://github.com/tpope/vim-surround' 								" Surrounding ysiw)
+    Plug 'https://github.com/tpope/vim-surround' 								" Surrounding ysiw)
     Plug 'https://github.com/tpope/vim-repeat', 								" Repeats surround commands
 	Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }    " Open file browse
     Plug 'https://github.com/junegunn/goyo.vim'                                 " Distraction free vim
@@ -16,6 +16,11 @@ call plug#begin('~/.vim/bundle')
     Plug 'https://github.com/itchyny/lightline.vim'                             " Status line
     Plug 'https://github.com/dense-analysis/ale'                                " LSP client
 call plug#end()
+
+autocmd VimEnter *
+    \|if !isdirectory('~/.vim/bundle')
+    \|PlugInstall
+    \|endif
 
 " -----------------------------------------------------------
 " BASIC SETTINGS:
@@ -47,11 +52,11 @@ set cursorline
 
 packloadall
 
-" colorscheme slate
-" set background=dark
-
-colorscheme paper
+colorscheme slate
 set background=dark
+
+" colorscheme paper
+" set background=dark
 " set background=light
 
 " -----------------------------------------------------------
@@ -93,7 +98,6 @@ nnoremap <leader>h      :noh<Enter>
 " -----------------------------------------------------------
 " BACKUP:
 " -----------------------------------------------------------
-
 set noswapfile                                                                  " disable creating swap file
 set nobackup nowritebackup                                                      " disable backup files
 
@@ -106,17 +110,17 @@ set udir=/tmp,/c/tmp,/c/temp
 " -----------------------------------------------------------
 " SETTINGS:
 " -----------------------------------------------------------
-source ~/Vimconfig/plug-config/ack.vim
-source ~/Vimconfig/plug-config/ale.vim
-source ~/Vimconfig/plug-config/autocomplete.vim
-source ~/Vimconfig/plug-config/bookmarks.vim
-source ~/Vimconfig/plug-config/compilers.vim
-source ~/Vimconfig/plug-config/filebrowsing.vim
-source ~/Vimconfig/plug-config/findfiles.vim
-source ~/Vimconfig/plug-config/folding.vim
-source ~/Vimconfig/plug-config/formatter.vim
-source ~/Vimconfig/plug-config/keybinding-git.vim
-source ~/Vimconfig/plug-config/keybinding-markdown.vim
-source ~/Vimconfig/plug-config/keybinding-npm.vim
-source ~/Vimconfig/plug-config/nerd-tree.vim
-source ~/Vimconfig/plug-config/terminal.vim
+source ~/.vim/plug-config/ack.vim
+source ~/.vim/plug-config/ale.vim
+source ~/.vim/plug-config/autocomplete.vim
+source ~/.vim/plug-config/bookmarks.vim
+source ~/.vim/plug-config/compilers.vim
+source ~/.vim/plug-config/filebrowsing.vim
+source ~/.vim/plug-config/findfiles.vim
+source ~/.vim/plug-config/folding.vim
+source ~/.vim/plug-config/formatter.vim
+source ~/.vim/plug-config/keybinding-git.vim
+source ~/.vim/plug-config/keybinding-markdown.vim
+source ~/.vim/plug-config/keybinding-npm.vim
+source ~/.vim/plug-config/nerd-tree.vim
+source ~/.vim/plug-config/terminal.vim
