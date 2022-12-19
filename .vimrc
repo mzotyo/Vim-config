@@ -17,10 +17,8 @@ call plug#begin('~/.vim/bundle')
     Plug 'https://github.com/dense-analysis/ale'                                " LSP client
 call plug#end()
 
-autocmd VimEnter *
-    \|if !isdirectory('~/.vim/bundle')
-    \|  PlugInstall
-    \|endif
+" If bundle directory does not exists the run the PlugInstall command
+autocmd VimEnter * if !isdirectory('/root/.vim/bundle') | PlugInstall | endif
 
 " -----------------------------------------------------------
 " BASIC SETTINGS:
