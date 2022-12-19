@@ -18,9 +18,9 @@ call plug#begin('~/.vim/bundle')
 call plug#end()
 
 autocmd VimEnter *
-  \| if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall | q
-  \| endif
+    \|if !isdirectory('~/.vim/bundle')
+    \|  PlugInstall
+    \|endif
 
 " -----------------------------------------------------------
 " BASIC SETTINGS:
@@ -52,11 +52,11 @@ set cursorline
 
 packloadall
 
-" colorscheme slate
-" set background=dark
-
-colorscheme paper
+colorscheme slate
 set background=dark
+
+" colorscheme paper
+" set background=dark
 " set background=light
 
 " -----------------------------------------------------------
