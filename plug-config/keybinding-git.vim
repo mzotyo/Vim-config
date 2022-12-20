@@ -44,3 +44,6 @@ nnoremap <Leader>st             :Git stash -u<Enter>
 nnoremap <Leader>sp             :Git stash pop<Enter>
 nnoremap <Leader>sa             :Git stash apply<Enter>
 nnoremap <Leader>sw             :Git stash show -p<Enter>
+
+" Load this settings
+nnoremap <Leader>gs             :e ~/.vim/plug-config/keybinding-git.vim<Enter>
