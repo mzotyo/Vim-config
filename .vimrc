@@ -15,10 +15,12 @@ call plug#begin('~/.vim/bundle')
     Plug 'https://github.com/junegunn/gv.vim'                                   " Git commit browser
     Plug 'https://github.com/itchyny/lightline.vim'                             " Status line
     Plug 'https://github.com/dense-analysis/ale'                                " LSP client
+    Plug 'https://github.com/vim-scripts/loremipsum'                            " Loremipsum generator
+    Plug 'https://github.com/alvan/vim-closetag'                                " Auto close html tags
 call plug#end()
 
 " If bundle directory does not exists the run the PlugInstall command
-autocmd VimEnter * if !isdirectory('/root/.vim/bundle') | PlugInstall | endif
+autocmd VimEnter * if !isdirectory('/home/magyari/.vim/bundle') | PlugInstall | endif
 
 " -----------------------------------------------------------
 " BASIC SETTINGS:
@@ -112,6 +114,7 @@ source ~/.vim/plug-config/ack.vim
 source ~/.vim/plug-config/ale.vim
 source ~/.vim/plug-config/autocomplete.vim
 source ~/.vim/plug-config/bookmarks.vim
+source ~/.vim/plug-config/closetag.vim
 source ~/.vim/plug-config/code-snippets.vim
 source ~/.vim/plug-config/compilers.vim
 source ~/.vim/plug-config/filebrowsing.vim
@@ -121,5 +124,6 @@ source ~/.vim/plug-config/formatter.vim
 source ~/.vim/plug-config/keybinding-git.vim
 source ~/.vim/plug-config/keybinding-markdown.vim
 source ~/.vim/plug-config/keybinding-npm.vim
+source ~/.vim/plug-config/loremipsum.vim
 source ~/.vim/plug-config/nerd-tree.vim
 source ~/.vim/plug-config/terminal.vim
