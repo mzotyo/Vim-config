@@ -112,6 +112,7 @@ source ~/.vim/plug-config/ack.vim
 source ~/.vim/plug-config/ale.vim
 source ~/.vim/plug-config/autocomplete.vim
 source ~/.vim/plug-config/bookmarks.vim
+source ~/.vim/plug-config/code-snippets.vim
 source ~/.vim/plug-config/compilers.vim
 source ~/.vim/plug-config/filebrowsing.vim
 source ~/.vim/plug-config/findfiles.vim
