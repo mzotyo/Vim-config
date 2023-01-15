@@ -6,11 +6,22 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'typescript': ['tslint', 'prettier'],
-\   'java': [ 'uncrustify']
+\   'java': [ 'uncrustify'],
+\   'html': [ 'prettier'],
+\   'css': [ 'prettier']
+\}
+
+let g:ale_linters = {
+\   'html': [ 'htmlhint'],
+\   'css': [ 'stylelint']
 \}
 
 let g:ale_javascript_prettier_standard_executable='eslint'
 let g:ale_typescript_prettier_standard_executable='eslint'
+
+" -----------------------------------------------------------
+" HTML:
+" -----------------------------------------------------------
 
 " -----------------------------------------------------------
 " Java LSP:
@@ -34,6 +45,9 @@ let g:ale_java_javalsp_executable = '/root/java-language-server/dist/lang_server
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+
+
+let g:ale_linters_explicit = 1
 
 " Automatic imports from external modules.
 let g:ale_completion_autoimport = 1
