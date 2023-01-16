@@ -5,7 +5,9 @@
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
 \   'typescript': ['tslint', 'prettier'],
+\   'typescriptreact': ['tslint', 'prettier'],
 \   'java': [ 'uncrustify'],
 \   'html': [ 'prettier'],
 \   'css': [ 'prettier']
@@ -13,11 +15,20 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
 \   'html': [ 'htmlhint'],
-\   'css': [ 'stylelint']
+\   'css': [ 'stylelint'],
+\   'typescript': ['tslint', 'tsserver'],
+\   'typescriptreact': ['tslint', 'tsserver']
 \}
 
 let g:ale_javascript_prettier_standard_executable='eslint'
 let g:ale_typescript_prettier_standard_executable='eslint'
+
+" -----------------------------------------------------------
+" Typescrpt LSP:
+" -----------------------------------------------------------
+let g:ale_typescript_tsserver_use_global=1
+let g:ale_typescript_tsserver_config_path = ''
+let g:ale_typescript_tsserver_executable = 'tsserver'
 
 " -----------------------------------------------------------
 " HTML:
@@ -62,6 +73,10 @@ let g:ale_completion_enabled = 1
 " ALE for displaying error information in the status bar.
 let g:airline#extensions#ale#enabled = 1
 
+" Quickfix list instead of the loclist
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
 " -----------------------------------------------------------
 " Navigation:
 " -----------------------------------------------------------
@@ -81,6 +96,7 @@ nnoremap <leader>rf             :ALEFindReferences -relative<Enter>
 nnoremap <leader>rn             :ALERename<Enter>
 nnoremap <leader>fn             :ALEFileRename<Enter>
 nnoremap <leader>oi             :ALEOrganizeImports<Enter>
+nnoremap <leader>ca             :ALECodeAction<Enter>
 
 " -----------------------------------------------------------
 " Display:
