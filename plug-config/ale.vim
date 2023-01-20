@@ -10,14 +10,15 @@ let g:ale_fixers = {
 \   'typescriptreact': ['tslint', 'prettier'],
 \   'java': [ 'uncrustify'],
 \   'html': [ 'prettier'],
-\   'css': [ 'prettier']
+\   'css': [ 'prettier'],
+\   'json': [ 'fixjson']
 \}
 
 let g:ale_linters = {
 \   'html': [ 'htmlhint'],
 \   'css': [ 'stylelint'],
-\   'typescript': ['tslint', 'tsserver'],
-\   'typescriptreact': ['tslint', 'tsserver']
+\   'typescript': ['tsserver', 'tslint'],
+\   'typescriptreact': ['tsserver', 'tslint']
 \}
 
 let g:ale_javascript_prettier_standard_executable='eslint'
@@ -83,8 +84,6 @@ let g:ale_set_quickfix = 1
 
 " Navigation
 nnoremap <leader>df             :ALEGoToDefinition<Enter>
-nnoremap <leader>ty             :ALEGoToTypeDefinition<Enter>
-nnoremap <leader>im             :ALEGoToImplementation<Enter>
 
 " You can jump back to the position you were at before going to a reference of
 " something with jump motions like CTRL-o. (CTRL+i jumps forward)
@@ -95,7 +94,7 @@ nnoremap <leader>rf             :ALEFindReferences -relative<Enter>
 " -----------------------------------------------------------
 nnoremap <leader>rn             :ALERename<Enter>
 nnoremap <leader>fn             :ALEFileRename<Enter>
-nnoremap <leader>oi             :ALEOrganizeImports<Enter>
+nnoremap <leader>im             :ALEImport<Enter>
 nnoremap <leader>ca             :ALECodeAction<Enter>
 
 " -----------------------------------------------------------
