@@ -98,6 +98,12 @@ nnoremap <leader>im             :ALEImport<Enter>
 nnoremap <leader>ca             :ALECodeAction<Enter>
 
 " -----------------------------------------------------------
+" Refactoring:
+" -----------------------------------------------------------
+nnoremap <leader>n              :ALENext<Enter>
+nnoremap <leader>b              :ALEPrevious<Enter>
+
+" -----------------------------------------------------------
 " Display:
 " -----------------------------------------------------------
 nnoremap <leader>dt             :ALEDetail<Enter>
