@@ -56,6 +56,8 @@ set ignorecase                                                                  
 
 set hlsearch                                                                    " highlight search
 set incsearch                                                                   " incremental search
+set splitright                                                                  " split to the right of the current window
+set splitbelow                                                                  " split below the current window
 
 set cursorline
 " set cc=130                                                                    " set an 130 column border for good coding style

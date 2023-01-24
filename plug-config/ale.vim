@@ -84,6 +84,8 @@ let g:ale_set_quickfix = 1
 
 " Navigation
 nnoremap <leader>df             :ALEGoToDefinition<Enter>
+nnoremap <leader>dv             :ALEGoToDefinition -vsplit<Enter>
+nnoremap <leader>ds             :ALEGoToDefinition -split<Enter>
 
 " You can jump back to the position you were at before going to a reference of
 " something with jump motions like CTRL-o. (CTRL+i jumps forward)
@@ -98,7 +100,7 @@ nnoremap <leader>im             :ALEImport<Enter>
 nnoremap <leader>ca             :ALECodeAction<Enter>
 
 " -----------------------------------------------------------
-" Refactoring:
+" Navigate errors:
 " -----------------------------------------------------------
 nnoremap <leader>n              :ALENext<Enter>
 nnoremap <leader>b              :ALEPrevious<Enter>
