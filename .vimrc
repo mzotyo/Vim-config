@@ -19,9 +19,6 @@ call plug#begin('~/.vim/bundle')
     Plug 'https://github.com/alvan/vim-closetag'                                " Auto close html tags
 call plug#end()
 
-" If bundle directory does not exists the run the PlugInstall command
-autocmd VimEnter * if !isdirectory('/home/magyari/.vim/bundle') | PlugInstall | endif
-
 " -----------------------------------------------------------
 " BASIC SETTINGS:
 " -----------------------------------------------------------
@@ -46,18 +43,20 @@ set ignorecase                                                                  
 
 set hlsearch                                                                    " highlight search
 set incsearch                                                                   " incremental search
+set splitright                                                                  " split to the right of the current window
+set splitbelow                                                                  " split below the current window
 
 set cursorline
 " set cc=130                                                                    " set an 130 column border for good coding style
 
 packloadall
 
-colorscheme slate
-set background=dark
-
-" colorscheme paper
+" colorscheme slate
 " set background=dark
-" set background=light
+
+colorscheme paper
+set background=light
+" set background=dark
 
 " -----------------------------------------------------------
 " KEY BINDING:
@@ -94,6 +93,9 @@ inoremap <C-y>          <ESC>:Goyo<Enter>
 
 " No highlight
 nnoremap <leader>h      :noh<Enter>
+
+" If bundle directory does not exists the run the PlugInstall command
+autocmd VimEnter * if !isdirectory('/home/magyari/.vim/bundle') | PlugInstall | endif
 
 " -----------------------------------------------------------
 " BACKUP:
