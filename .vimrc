@@ -64,9 +64,6 @@ set background=light
 
 let mapleader = "-"                                                             " Map leader key
 
-" Toggles file browsing window on and off
-nnoremap <C-e>          :NERDTreeToggle<Enter>
-
 " Open init.vim
 nnoremap <leader>i      :e ~/.vimrc<Enter>
 nnoremap <leader>s      :source %<Enter>
