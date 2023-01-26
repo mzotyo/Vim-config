@@ -123,6 +123,7 @@ source ~/.vim/plug-config/formatter.vim
 source ~/.vim/plug-config/keybinding-git.vim
 source ~/.vim/plug-config/keybinding-markdown.vim
 source ~/.vim/plug-config/keybinding-npm.vim
+source ~/.vim/plug-config/light-line.vim
 source ~/.vim/plug-config/loremipsum.vim
 source ~/.vim/plug-config/nerd-tree.vim
 source ~/.vim/plug-config/terminal.vim
