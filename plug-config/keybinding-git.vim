@@ -11,8 +11,9 @@
 "endfun
 
 function! GitStatusWindow()
-    execute "G"
-    wincmd T
+    execute ":vertical Git"
+    setlocal winfixwidth
+    vertical resize 80
 endfun
 
 nnoremap <C-g>                  :call GitStatusWindow()<Enter>
