@@ -21,8 +21,8 @@ nnoremap <C-g>                  :call GitStatusWindow()<Enter>
 nnoremap <Leader>gd             :vert Gdiffsplit<Enter>
 
 " Log
-nnoremap <Leader>lg             :GV<Enter>
-nnoremap <Leader>lb             :GV HEAD<space>
+nnoremap <C-l>                  :GV<Enter>
+nnoremap <C-l>b                 :GV HEAD<space>
 
 " Push Pull
 nnoremap <Leader>gu             :Git push --set-upstream origin<space>
@@ -39,7 +39,7 @@ nnoremap <Leader>gbr            :Git checkout -b<space>
 
 
 " Resolve merge conflicts
-nnoremap <Leader>gm             :Conflicted<Enter>
+nnoremap <C-m>                  :Conflicted<Enter>
 
 
 " Cherry pick
