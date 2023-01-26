@@ -1,6 +1,7 @@
-set nofoldenable
+set foldlevel=99
+" set nofoldenable
 " set foldlevelstart=0
-" set foldnestmax=1
+" set foldnestmax=0
 " set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 
 set foldmethod=syntax

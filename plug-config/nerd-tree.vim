@@ -10,4 +10,4 @@ let g:NERDTreeQuitOnOpen = 1
 
 " Toggles file browsing window on and off
 nnoremap <C-e>          :NERDTreeToggle<Enter>
-nnoremap <C-e>f         :NERDTreeFind<Enter>
+nnoremap <C-r>          :NERDTreeFind<Enter>
