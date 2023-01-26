@@ -2,11 +2,17 @@
 " GIT CONFIGURATIONS:
 " ------------------------------------------------------------------------------
 " Git status window
+"
+"function! GitStatusWindow()
+"    execute "G"
+"    wincmd L
+"    setlocal winfixwidth
+"    vertical resize 50
+"endfun
+
 function! GitStatusWindow()
     execute "G"
-    wincmd L
-    setlocal winfixwidth
-    vertical resize 50
+    wincmd T
 endfun
 
 nnoremap <C-g>                  :call GitStatusWindow()<Enter>
