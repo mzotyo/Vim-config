@@ -5,9 +5,9 @@
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'javascriptreact': ['eslint'],
-\   'typescript': ['tslint', 'prettier'],
-\   'typescriptreact': ['tslint', 'prettier'],
+\   'javascriptreact': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'tslint'],
+\   'typescriptreact': ['prettier', 'tslint'],
 \   'java': [ 'uncrustify'],
 \   'html': [ 'prettier'],
 \   'css': [ 'prettier'],
@@ -17,39 +17,9 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \   'html': [ 'htmlhint'],
 \   'css': [ 'stylelint'],
-\   'typescript': ['tsserver', 'tslint'],
-\   'typescriptreact': ['tsserver', 'tslint']
+\   'typescript': ['tslint', 'tsserver'],
+\   'typescriptreact': ['tslint', 'tsserver']
 \}
-
-let g:ale_javascript_prettier_standard_executable='eslint'
-let g:ale_typescript_prettier_standard_executable='eslint'
-
-" -----------------------------------------------------------
-" Typescrpt LSP:
-" -----------------------------------------------------------
-let g:ale_typescript_tsserver_use_global=1
-let g:ale_typescript_tsserver_config_path = ''
-let g:ale_typescript_tsserver_executable = 'tsserver'
-
-" -----------------------------------------------------------
-" HTML:
-" -----------------------------------------------------------
-
-" -----------------------------------------------------------
-" Java LSP:
-" -----------------------------------------------------------
-
-" Java Language Server
-"  1. Clone: `git clone https://github.com/georgewfraser/java-language-server`
-"  2. Run: `./scripts/link_linux.sh`
-"     The link_linux.sh script requires jdk-18
-"  3. Copy: `cp ./scripts/dist/linux ./dist`
-"  4. Run: mvn package -DskipTests
-
-
-" Java Language Server Client
-" https://github.com/dense-analysis/ale/blob/master/doc/ale-java.txt
-let g:ale_java_javalsp_executable = '/root/java-language-server/dist/lang_server_linux.sh'
 
 " -----------------------------------------------------------
 " General Configurations:
@@ -59,6 +29,9 @@ let g:ale_java_javalsp_executable = '/root/java-language-server/dist/lang_server
 let g:ale_fix_on_save = 1
 
 
+" When set to `1`, only the linters from |g:ale_linters| and |b:ale_linters|
+" will be enabled. The default behavior for ALE is to enable as many linters
+" as possible, unless otherwise specified.
 let g:ale_linters_explicit = 1
 
 " Automatic imports from external modules.
@@ -74,9 +47,47 @@ let g:ale_completion_enabled = 1
 " ALE for displaying error information in the status bar.
 let g:airline#extensions#ale#enabled = 1
 
-" Quickfix list instead of the loclist
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+" Locallist list instead of the loclist
+let g:ale_open_list = 0
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+
+" Shows suggestions alog the error messages
+let g:ale_lsp_suggestions = 1
+
+" When this option is set to `1`, ALE will show code actions and rename
+" capabilities in the right click mouse menu when there's a LSP server or
+" tsserver available
+"
+" This feature is only supported in GUI versions of Vim.
+let g:ale_popup_menu_enabled = 1
+
+" If enabled, this option will tell tsserver to find and replace text in
+" comments when calling |ALERename
+let g:ale_rename_tsserver_find_in_comments = 1
+
+" If enabled, this option will tell tsserver to find and replace text in
+" strings when calling |ALERename|.
+let g:ale_rename_tsserver_find_in_strings = 1
+
+" When this option is set to `1`, balloon messages will be displayed for
+" problems or hover information if available.
+" let g:ale_set_balloons = has('gui_running') ? 'hover' : 0
+let g:ale_set_balloons = 1
+
+
+"  ALE will use the following highlight groups for problems:
+"
+"  |ALEError|        - Items with `'type': 'E'`
+"  |ALEWarning|      - Items with `'type': 'W'`
+"  |ALEInfo.|        - Items with `'type': 'I'`
+"  |ALEStyleError|   - Items with `'type': 'E'` and `'sub_type': 'style'`
+"  |ALEStyleWarning| - Items with `'type': 'W'` and `'sub_type': 'style'`
+let g:ale_set_highlights = 1
+
+" When this option is set to `1`, the |sign| column will be populated with
+" signs marking where problems appear in the file.
+let g:ale_set_signs = 1
 
 " -----------------------------------------------------------
 " Navigation:
@@ -102,8 +113,8 @@ nnoremap <leader>ca             :ALECodeAction<Enter>
 " -----------------------------------------------------------
 " Navigate errors:
 " -----------------------------------------------------------
-nnoremap <leader>n              :ALENext<Enter>
-nnoremap <leader>b              :ALEPrevious<Enter>
+nnoremap <C-n>                  :ALENextWrap<Enter>
+nnoremap <C-p>                  :ALEPreviousWrap<Enter>
 
 " -----------------------------------------------------------
 " Display:
