@@ -11,32 +11,32 @@ endfun
 nnoremap <C-g>                  :call GitStatusWindow()<Enter>
 
 " Changes
-command  Diff                   :vert Gdiffsplit
+command! Diff                   :vert Gdiffsplit
 nnoremap <Leader>gd             :Diff<Enter>
 
 " Log
-command  Log                    :GV
+command! Log                    :GV
 nnoremap <C-l>                  :Log<Enter>
 nnoremap <C-l>b                 :Log HEAD<space>
 
 " Push Pull
-command  Upstream               :Git push --set-upstream origin
+command! Upstream               :Git push --set-upstream origin
 nnoremap <Leader>gu             :Upstream<space>
-command  Push                   :Git push
+command! Push                   :Git push
 nnoremap <Leader>gp             :Push<Enter>
-command  ForcPush               :Git push -f
+command! ForcPush               :Git push -f
 nnoremap <Leader>gf             :ForcPush<Enter>
-command  Pull                   :Git pull
+command! Pull                   :Git pull
 nnoremap <Leader>gl             :Pull<Enter>
 
 " Blame
-command  Blame                  :Git blame
+command! Blame                  :Git blame
 nnoremap <Leader>gb             :Blame<Enter>
 
 " Checkout
-command  Checkout               :Git checkout
+command! Checkout               :Git checkout
 nnoremap <Leader>gc             :Checkout<space>
-command  CreateBranch           :Git checkout -b
+command! CreateBranch           :Git checkout -b
 nnoremap <Leader>gbr            CreateBranch<space>
 
 
@@ -48,18 +48,15 @@ nnoremap <C-m>                  :Conflicted<Enter>
 nnoremap <Leader>gcp            :Git cherry-pick<space>
 
 " Stash
-command  Stash                  :Git stash -u
+command! Stash                  :Git stash -u
 nnoremap <Leader>st             :Stash<Enter>
-command  Pop                    :Git stash pop
+command! Pop                    :Git stash pop
 nnoremap <Leader>sp             :Pop<Enter>
-command  Apply                  :Git stash apply
+command! Apply                  :Git stash apply
 nnoremap <Leader>sa             :Apply<Enter>
-command  StashShow              :Git stash show -p
+command! StashShow              :Git stash show -p
 nnoremap <Leader>sw             StashShow<Enter>
-command  StashList              :Git stash list
+command! StashList              :Git stash list
 nnoremap <Leader>sl             :StashList<Enter>
-command  StashDrop              :Git stash drop stash@{1}
+command! StashDrop              :Git stash drop stash@{1}
 nnoremap <Leader>sd             :StashDrop
-
-" Load this settings
-command  GitSettings            execute(':e '.g:plug_config_path."/keybinding-git.vim")
