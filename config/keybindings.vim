@@ -27,3 +27,6 @@ inoremap <C-y>          <ESC>:Goyo<Enter>
 
 " No highlight
 nnoremap <leader>h      :noh<Enter>
+
+" Goto command line
+nnoremap <Enter>         :
