@@ -89,36 +89,60 @@ let g:ale_set_highlights = 1
 " signs marking where problems appear in the file.
 let g:ale_set_signs = 1
 
+" When this option is set to `1`, Vim with |popupwin| will use a
+" floating window for ALEDetail output.
+let g:ale_detail_to_floating_preview = 1
+
 " -----------------------------------------------------------
 " Navigation:
 " -----------------------------------------------------------
 
 " Navigation
-nnoremap <leader>df             :ALEGoToDefinition<Enter>
-nnoremap <leader>dv             :ALEGoToDefinition -vsplit<Enter>
-nnoremap <leader>ds             :ALEGoToDefinition -split<Enter>
+command  Definition             :ALEGoToDefinition
+nnoremap <leader>d              :Definition<Enter>
+
+command  DefinitionVert         :ALEGoToDefinition -vsplit
+nnoremap <leader>dv             :DefinitionVert<Enter>
+
+command  DefinitionSplit        :ALEGoToDefinition -split
+nnoremap <leader>ds             :DefinitionSplit<Enter>
 
 " You can jump back to the position you were at before going to a reference of
 " something with jump motions like CTRL-o. (CTRL+i jumps forward)
-nnoremap <leader>rf             :ALEFindReferences -relative<Enter>
+command  References             :ALEFindReferences -relative
+nnoremap <leader>rf             :References<Enter>
 
 " -----------------------------------------------------------
 " Refactoring:
 " -----------------------------------------------------------
-nnoremap <leader>rn             :ALERename<Enter>
-nnoremap <leader>fn             :ALEFileRename<Enter>
-nnoremap <leader>im             :ALEImport<Enter>
-nnoremap <leader>ca             :ALECodeAction<Enter>
+command  Rename                 :ALERename
+nnoremap <leader>rn             :Rename<Enter>
+
+command  FileRename             :ALEFileRename
+nnoremap <leader>fn             :FileRename<Enter>
+
+command  Import                 :ALEImport
+nnoremap <leader>im             Import<Enter>
+
+command  CodeAction             :ALECodeAction
+nnoremap <leader>ca             CodeAction<Enter>
 
 " -----------------------------------------------------------
 " Navigate errors:
 " -----------------------------------------------------------
-nnoremap <C-n>                  :ALENextWrap<Enter>
-nnoremap <C-p>                  :ALEPreviousWrap<Enter>
+command  NextError              :ALENextWrap
+nnoremap <C-n>                  :NextError<Enter>
+command  PreviousError          :ALEPreviousWrap
+nnoremap <C-p>                  :PreviousError<Enter>
 
 " -----------------------------------------------------------
 " Display:
 " -----------------------------------------------------------
-nnoremap <leader>dt             :ALEDetail<Enter>
-nnoremap <leader>hv             :ALEHover<Enter>
-nnoremap <leader>qf             :ALEPopulateQuickfix<Enter>
+command  Details                :ALEDetail
+nnoremap <leader>dt             :Details<Enter>
+
+command  Hover                  :ALEHover
+nnoremap <leader>hv             :Hover<Enter>
+
+command  QuickFix               :ALEPopulateQuickfix
+nnoremap <leader>qf             :QuickFix<Enter>:copen<Enter>

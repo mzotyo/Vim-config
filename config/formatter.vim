@@ -2,9 +2,6 @@
 " -----------------------------------------------------------
 " FORMATTERS:
 " -----------------------------------------------------------
-" autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-" autocmd FileType typescript call "!eslint --fix %"
-
 
 " -----------------------------------------------------------
 " Typescript and JavaScript prittier
