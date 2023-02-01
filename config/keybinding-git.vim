@@ -8,10 +8,6 @@ function! GitStatusWindow()
     setlocal winfixwidth
     vertical resize 80
 endfun
-" ------------------------------------------------------------------------------
-"  Git Status:
-command! Status                 :call GitStatusWindow()
-nnoremap <C-g>                  :Status<Enter>
 
 " ------------------------------------------------------------------------------
 " Changes:
@@ -34,7 +30,7 @@ nnoremap <Leader>gu             :Upstream<space>
 command! Push                   :Git push
 nnoremap <Leader>gp             :Push<Enter>
 
-command! ForcPush               :Git push -f
+command! ForcePush              :Git push -f
 nnoremap <Leader>gf             :ForcPush<Enter>
 
 command! Pull                   :Git pull
@@ -55,9 +51,25 @@ nnoremap <Leader>gbr            CreateBranch<space>
 
 
 " ------------------------------------------------------------------------------
+" Commit:
+command! GitStatus              :call GitStatusWindow()
+nnoremap <C-g>                  :GitStatus<Enter>
+
+command! Status                 :Git status
+nnoremap <Leader>gs             :Status<Enter>
+
+command! -nargs=1 Add           :Git add <args>
+nnoremap <Leader>ga             :Add<space>*<Enter>
+
+command! Commit                 :Git commit
+nnoremap <Leader>gt             :Commit<Enter>
+
+command! AmendCommit            :Git commit --amend
+nnoremap <Leader>gt             :AmendCommit<Enter>
+
+" ------------------------------------------------------------------------------
 " Merge Conflicts:
 nnoremap <C-m>                  :Conflicted<Enter>
-
 
 " ------------------------------------------------------------------------------
 " Cherry Pick:
@@ -65,7 +77,7 @@ nnoremap <Leader>gcp            :Git cherry-pick<space>
 
 " ------------------------------------------------------------------------------
 " Stash:
-command! Stash                  :Git stash -u
+command! -nargs=1 Stash         :Git stash -u -m <args>
 nnoremap <Leader>st             :Stash<Enter>
 
 command! Pop                    :Git stash pop
@@ -74,11 +86,11 @@ nnoremap <Leader>sp             :Pop<Enter>
 command! Apply                  :Git stash apply
 nnoremap <Leader>sa             :Apply<Enter>
 
-command! StashShow              :Git stash show -p
+command! -nargs=1 StashShow     :Git stash show -p stash@{<args>}
 nnoremap <Leader>sw             StashShow<Enter>
 
 command! StashList              :Git stash list
 nnoremap <Leader>sl             :StashList<Enter>
 
-command! StashDrop              :Git stash drop stash@{1}
+command! -nargs=1 StashDrop     :Git stash drop stash@{<args>}
 nnoremap <Leader>sd             :StashDrop
