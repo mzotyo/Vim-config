@@ -13,5 +13,6 @@
 " Vim theme
 command! Dark                   set background=dark
 command! Light                  set background=light
-command! GitSettings            execute(':e '.g:config_path."/keybinding-git.vim")
-command! VimSettings            execute(':e '.g:vimrc_path)
+command! Keybindings            execute(':e '.g:config_path."/keybindings.vim")
+command! Vimrc                  execute(':e '.g:vimrc_path)
+command! Source                 execute(':source '.g:vimrc_path)

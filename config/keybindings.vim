@@ -4,32 +4,34 @@
 let mapleader = "-"                                                             " Map leader key
 
 " Toggles file browsing window on and off
-nnoremap <C-e>          :NERDTreeToggle<Enter>
-nnoremap <C-r>          :NERDTreeFind<Enter>
+nnoremap <M-1>                  :NERDTreeToggle<Enter>
+nnoremap <M-2>                  :NERDTreeFind<Enter>
 
 " Create and navigate tabs
-nnoremap <C-t>          :tabnew<Enter>
-nnoremap <C-h>          :tabprevious<Enter>
-nnoremap <C-l>          :tabnext<Enter>
+nnoremap <C-t>                  :tabnew<Enter>
+nnoremap <C-h>                  :tabprevious<Enter>
+nnoremap <C-l>                  :tabnext<Enter>
+nnoremap <C-Left>               :tabprevious<Enter>
+nnoremap <C-Right>              :tabnext<Enter>
 
 " Save & exit
-nnoremap <C-s>          :w<Enter>
-nnoremap <C-c>          :wq<Enter>
-nnoremap <C-x>          :q!<Enter>
+nnoremap <C-s>                  :w<Enter>
+nnoremap <C-c>                  :wq<Enter>
+nnoremap <C-x>                  :q!<Enter>
 
-inoremap <C-s>          <ESC>:w<Enter>
-inoremap <C-c>          <ESC>:wq<Enter>
-inoremap <C-x>          <ESC>:q!<Enter>
+inoremap <C-s>                  <ESC>:w<Enter>
+inoremap <C-c>                  <ESC>:wq<Enter>
+inoremap <C-x>                  <ESC>:q!<Enter>
 
 " Distraction free
-nnoremap <C-y>          :Goyo<Enter>
-inoremap <C-y>          <ESC>:Goyo<Enter>
+nnoremap <C-y>                  :Goyo<Enter>
+inoremap <C-y>                  <ESC>:Goyo<Enter>
 
 " No highlight
-nnoremap <leader>h      :noh<Enter>
+nnoremap <leader>h              :noh<Enter>
 
 " Goto command line
-nnoremap <Enter>         :
+nnoremap <Enter>                :
 
 " ------------------------------------------------------------------------------
 " GIT:
@@ -39,8 +41,8 @@ nnoremap <Enter>         :
 nnoremap <Leader>gd             :Diff<Enter>
 
 " Log
-nnoremap <C-l>                  :Log<Enter>
-nnoremap <C-l>b                 :LogBranch<Space>
+nnoremap <M-4>lg                :Log<Enter>
+nnoremap <Leader>lb             :LogBranch<Space>
 
 " Push And Pull
 nnoremap <Leader>gu             :Upstream<space>
@@ -53,17 +55,17 @@ nnoremap <Leader>gb             :Blame<Enter>
 
 " Checkout
 nnoremap <Leader>gc             :Checkout<space>
-nnoremap <Leader>gbr            CreateBranch<space>
+nnoremap <Leader>gbr            :CreateBranch<space>
 
 " Commit
-nnoremap <C-g>                  :GitStatus<Enter>
+nnoremap <M-3>                  :GitStatus<Enter>
 nnoremap <Leader>gs             :Status<Enter>
 nnoremap <Leader>ga             :Add<space>*<Enter>
 nnoremap <Leader>gt             :Commit<Enter>
 nnoremap <Leader>gt             :AmendCommit<Enter>
 
 " Merge Conflicts
-nnoremap <C-m>                  :Conflicted<Enter>
+nnoremap <Leader>cf             :Conflicted<Enter>
 
 " Cherry Pick
 nnoremap <Leader>gcp            :Git cherry-pick<space>
@@ -72,7 +74,7 @@ nnoremap <Leader>gcp            :Git cherry-pick<space>
 nnoremap <Leader>st             :Stash<Enter>
 nnoremap <Leader>sp             :Pop<Enter>
 nnoremap <Leader>sa             :Apply<Enter>
-nnoremap <Leader>sw             StashShow<Enter>
+nnoremap <Leader>sw             :StashShow<Enter>
 nnoremap <Leader>sl             :StashList<Enter>
 nnoremap <Leader>sd             :StashDrop
 
@@ -112,12 +114,12 @@ nnoremap <leader>qf             :QuickFix<Enter>:copen<Enter>
 " -----------------------------------------------------------
 " TERMINAL:
 " -----------------------------------------------------------
-nnoremap <leader>t              :call TerminalWindow()<Enter>
+nnoremap <M-0>                  :call TerminalWindow()<Enter>
 
 " -----------------------------------------------------------
 " FORMATTERS:
 " -----------------------------------------------------------
-nnoremap <Leader>p             :call Prettier("%")<Enter><Enter>
+nnoremap <Leader>p              :call Prettier("%")<Enter><Enter>
 
 " -----------------------------------------------------------
 " SNIPPESTS:
