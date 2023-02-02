@@ -5,7 +5,7 @@ let mapleader = "-"                                                             
 
 " Toggles file browsing window on and off
 nnoremap <M-1>                  :NERDTreeToggle<Enter>
-nnoremap <M-2>                  :NERDTreeFind<Enter>
+nnoremap <M-2>                  :NERDTreeFind<Enter>:noh<Enter>
 
 " Create and navigate tabs
 nnoremap <C-t>                  :tabnew<Enter>
@@ -28,7 +28,7 @@ nnoremap <C-y>                  :Goyo<Enter>
 inoremap <C-y>                  <ESC>:Goyo<Enter>
 
 " No highlight
-nnoremap <leader>h              :noh<Enter>
+nnoremap <M-h>                  :noh<Enter>
 
 " Goto command line
 nnoremap <Enter>                :
@@ -41,14 +41,14 @@ nnoremap <Enter>                :
 nnoremap <Leader>gd             :Diff<Enter>
 
 " Log
-nnoremap <M-4>lg                :Log<Enter>
+nnoremap <M-l>                  :Log<Enter>
 nnoremap <Leader>lb             :LogBranch<Space>
 
 " Push And Pull
 nnoremap <Leader>gu             :Upstream<space>
-nnoremap <Leader>gp             :Push<Enter>
-nnoremap <Leader>gf             :ForcPush<Enter>
-nnoremap <Leader>gl             :Pull<Enter>
+nnoremap <M-p>                  :Push<Enter>
+nnoremap <M-p>f                 :ForcePush<Enter>
+nnoremap <M-u>                  :Pull<Enter>
 
 " Blame
 nnoremap <Leader>gb             :Blame<Enter>
@@ -58,11 +58,11 @@ nnoremap <Leader>gc             :Checkout<space>
 nnoremap <Leader>gbr            :CreateBranch<space>
 
 " Commit
-nnoremap <M-3>                  :GitStatus<Enter>
+nnoremap <M-s>                  :GitStatus<Enter>
 nnoremap <Leader>gs             :Status<Enter>
-nnoremap <Leader>ga             :Add<space>*<Enter>
-nnoremap <Leader>gt             :Commit<Enter>
-nnoremap <Leader>gt             :AmendCommit<Enter>
+nnoremap <M-a>                  :Add<space>*<Enter>
+nnoremap <M-c>                  :Commit<Enter>
+nnoremap <M-c>a                 :AmendCommit<Enter>
 
 " Merge Conflicts
 nnoremap <Leader>cf             :Conflicted<Enter>
@@ -114,7 +114,7 @@ nnoremap <leader>qf             :QuickFix<Enter>:copen<Enter>
 " -----------------------------------------------------------
 " TERMINAL:
 " -----------------------------------------------------------
-nnoremap <M-0>                  :call TerminalWindow()<Enter>
+nnoremap <M-t>                  :call TerminalWindow()<Enter>
 
 " -----------------------------------------------------------
 " FORMATTERS:
