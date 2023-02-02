@@ -1,26 +1,4 @@
 " -----------------------------------------------------------
-" SOURCING SETTING FILES:
-" -----------------------------------------------------------
-execute(':source '.g:plug_config_path.'/bookmarks.vim')
-execute(':source '.g:plug_config_path.'/ack.vim')
-execute(':source '.g:plug_config_path.'/nerd-tree.vim')
-execute(':source '.g:plug_config_path.'/ale.vim')
-execute(':source '.g:plug_config_path.'/light-line.vim')
-execute(':source '.g:plug_config_path.'/loremipsum.vim')
-execute(':source '.g:plug_config_path.'/closetag.vim')
-
-execute(':source '.g:config_path.'/filebrowsing.vim')
-execute(':source '.g:config_path.'/findfiles.vim')
-execute(':source '.g:config_path.'/autocomplete.vim')
-execute(':source '.g:config_path.'/folding.vim')
-execute(':source '.g:config_path.'/code-snippets.vim')
-execute(':source '.g:config_path.'/formatter.vim')
-execute(':source '.g:config_path.'/terminal.vim')
-execute(':source '.g:config_path.'/custom-commands.vim')
-execute(':source '.g:config_path.'/keybinding-git.vim')
-execute(':source '.g:config_path.'/keybindings.vim')
-
-" -----------------------------------------------------------
 " BASIC SETTINGS:
 " -----------------------------------------------------------
 set encoding=utf-8
@@ -55,3 +33,24 @@ colorscheme paper
 "colorscheme slate
 set background=light
 "set background=dark
+
+" -----------------------------------------------------------
+" SOURCING SETTING FILES:
+" -----------------------------------------------------------
+execute(':source '.g:plug_config_path.'/ack.vim')
+execute(':source '.g:plug_config_path.'/ale.vim')
+execute(':source '.g:plug_config_path.'/bookmarks.vim')
+execute(':source '.g:plug_config_path.'/closetag.vim')
+execute(':source '.g:plug_config_path.'/light-line.vim')
+execute(':source '.g:plug_config_path.'/loremipsum.vim')
+execute(':source '.g:plug_config_path.'/nerd-tree.vim')
+
+execute(':source '.g:config_path.'/autocomplete.vim')
+execute(':source '.g:config_path.'/custom-commands.vim')
+execute(':source '.g:config_path.'/filebrowsing.vim')
+execute(':source '.g:config_path.'/findfiles.vim')
+execute(':source '.g:config_path.'/folding.vim')
+execute(':source '.g:config_path.'/formatter.vim')
+execute(':source '.g:config_path.'/git.vim')
+execute(':source '.g:config_path.'/keybindings.vim')
+execute(':source '.g:config_path.'/terminal.vim')

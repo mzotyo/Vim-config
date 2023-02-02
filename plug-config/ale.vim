@@ -94,56 +94,37 @@ let g:ale_set_signs = 1
 let g:ale_detail_to_floating_preview = 1
 
 " -----------------------------------------------------------
-" Navigation:
+" CUSTOM COMMANDS:
 " -----------------------------------------------------------
 
-" Navigation
+" -----------------------------------------------------------
+" Navigation:
+" -----------------------------------------------------------
 command! Definition             :ALEGoToDefinition
-nnoremap <leader>d              :Definition<Enter>
-
 command! DefinitionVert         :ALEGoToDefinition -vsplit
-nnoremap <leader>dv             :DefinitionVert<Enter>
-
 command! DefinitionSplit        :ALEGoToDefinition -split
-nnoremap <leader>ds             :DefinitionSplit<Enter>
 
 " You can jump back to the position you were at before going to a reference of
 " something with jump motions like CTRL-o. (CTRL+i jumps forward)
 command!  References            :ALEFindReferences -relative
-nnoremap <leader>rf             :References<Enter>
 
 " -----------------------------------------------------------
 " Refactoring:
 " -----------------------------------------------------------
 command!  Rename                 :ALERename
-nnoremap <leader>rn             :Rename<Enter>
-
 command! FileRename             :ALEFileRename
-nnoremap <leader>fn             :FileRename<Enter>
-
 command! Import                 :ALEImport
-nnoremap <leader>im             :Import<Enter>
-
 command! CodeAction             :ALECodeAction
-nnoremap <leader>ca             :CodeAction<Enter>
 
 " -----------------------------------------------------------
-" Navigate errors:
+" Navigate Errors:
 " -----------------------------------------------------------
 command! NextError              :ALENextWrap
-nnoremap <C-n>                  :NextError<Enter>
-
 command! PreviousError          :ALEPreviousWrap
-nnoremap <C-p>                  :PreviousError<Enter>
 
 " -----------------------------------------------------------
 " Display:
 " -----------------------------------------------------------
 command! Details                :ALEDetail
-nnoremap <leader>dt             :Details<Enter>
-
 command! Hover                  :ALEHover
-nnoremap <leader>hv             :Hover<Enter>
-
 command! QuickFix               :ALEPopulateQuickfix
-nnoremap <leader>qf             :QuickFix<Enter>:copen<Enter>
