@@ -7,6 +7,7 @@ let g:vim_path=g:home_path.'/.vim'                                              
 let g:bundle_path=g:vim_path.'/bundle'                                          " path to plugin install directory
 let g:config_path=g:vim_path.'/config'                                          " path to vim general configuration
 let g:plug_config_path=g:vim_path.'/plug-config'                                " path to vim plugin configuration directory
+let g:code_snippets_path=g:vim_path.'/code-snippets'                            " ptha to predefined code snippets
 
 " -----------------------------------------------------------
 " BACKUP CONFIGURATION:

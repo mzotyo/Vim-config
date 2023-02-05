@@ -124,4 +124,4 @@ nnoremap <Leader>p              :call Prettier("%")<Enter><Enter>
 " -----------------------------------------------------------
 " SNIPPESTS:
 " -----------------------------------------------------------
-nnoremap <Leader>cs             :r ~/.vim/code-snippets/<cword><Enter>kdd
+nnoremap <Leader>cs             :execute(':r '.g:code_snippets_path.'/<cword>')<Enter>kdd
