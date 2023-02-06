@@ -17,7 +17,7 @@ endfun
 command! Diff                   :vert Gdiffsplit
 
 " Log
-command! Log                    :GV
+command! Log                    :GV HEAD master
 command! -nargs=1 LogBranch     :GV HEAD <args>
 
 " Push And Pull
